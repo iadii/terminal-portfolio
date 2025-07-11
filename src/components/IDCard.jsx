@@ -3,6 +3,7 @@ import { Github, Linkedin, Code, Trophy, Braces } from 'lucide-react'
 import { SiX } from 'react-icons/si'
 
 const PROFILE_IMG = '/Ammy1.jpeg'
+// const PROFILE_IMG = '/Ammy.jpg'
 
 const LINKS = [
   { name: 'Github', url: 'https://github.com/ammycodex', icon: Github },
@@ -17,12 +18,12 @@ const IDCard = () => {
   const [hovered, setHovered] = useState(null)
 
   return (
-    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md max-h-[90vh] overflow-auto rounded-2xl bg-[#181818] shadow-xl border border-[#222] mx-auto">
-      <div className="relative w-full h-1/2">
-        <img src={PROFILE_IMG} alt="Profile" className="object-contain w-full h-full bg-black" style={{ objectPosition: 'center' }} />
+    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md rounded-2xl bg-[#181818] shadow-xl border border-[#222] mx-auto">
+      <div className="relative w-full aspect-[4/3] rounded-t-2xl overflow-hidden">
+        <img src={PROFILE_IMG} alt="Profile" className="object-cover w-full h-full bg-black rounded-t-2xl" style={{ objectPosition: 'center 40%' }} />
         <span className="absolute top-2 right-2 bg-[#222] text-xs text-gray-200 px-3 py-1 rounded-full shadow-md z-20">ID: DEV-2025</span>
       </div>
-      <div className="flex flex-col justify-between h-1/2 p-3 sm:p-4 md:p-5 text-white">
+      <div className="flex flex-col justify-between p-3 sm:p-4 md:p-5 text-white">
         <div>
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-wide">Amisha Sharma</h2>
           <p className="text-sm sm:text-base text-gray-300 mb-2">AI Developer</p>
