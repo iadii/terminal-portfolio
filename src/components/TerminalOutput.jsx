@@ -23,7 +23,7 @@ const TerminalOutput = ({ history, outputRef, currentPath }) => {
           {item.type === 'input' && (
             <div className="terminal-line">
               <span className="terminal-prompt">
-                amisha@macbook:{item.path}$
+                root@amisha.io:{item.path}$
               </span>
               <span className="terminal-text">{item.content}</span>
             </div>
