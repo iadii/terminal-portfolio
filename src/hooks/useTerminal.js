@@ -10,10 +10,13 @@ export const useTerminal = () => {
   const inputRef = useRef(null)
   const outputRef = useRef(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (input.trim()) {
-      const result = executeCommand(input.trim(), currentPath)
+      let result = executeCommand(input.trim(), currentPath)
+      if (result instanceof Promise) {
+        result = await result
+      }
       const { output, newPath } = result
       setCommandHistory(prev => [...prev, input.trim()])
       setHistoryIndex(-1)

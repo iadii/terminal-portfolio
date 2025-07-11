@@ -41,7 +41,7 @@ const TerminalHeader = ({ currentPath }) => {
         </div>
       </div>
       <div className="terminal-title text-xs sm:text-sm md:text-base flex-1 text-center">
-        root@amisha.io — ~zsh — 80×24
+        root@amisha.io — ~zsh — 112×46
       </div>
       <div className="w-8"></div>
     </div>

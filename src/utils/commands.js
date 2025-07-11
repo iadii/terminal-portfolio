@@ -10,26 +10,45 @@ const getCurrentTime = () => {
   })
 }
 
-const getRandomQuote = () => {
-  const quotes = [
-    "Code is like humor. When you have to explain it, it's bad. – Cory House",
-    "The best error message is the one that never shows up. – Thomas Fuchs",
-    "Any fool can write code that a computer can understand. Good programmers write code that humans can understand. – Martin Fowler",
-    "First, solve the problem. Then, write the code. – John Johnson"
-  ]
-  return quotes[Math.floor(Math.random() * quotes.length)]
+// Replace getRandomQuote with API-based version
+const getRandomQuote = async () => {
+  try {
+    const res = await fetch('https://api.quotable.io/random');
+    if (!res.ok) throw new Error('Network response was not ok');
+    const data = await res.json();
+    return `${data.content} – ${data.author}`;
+  } catch (e) {
+    return 'Could not fetch quote. Try again later.';
+  }
+}
+
+const getRandomJoke = async () => {
+  try {
+    const res = await fetch('https://v2.jokeapi.dev/joke/Any?safe-mode&type=single');
+    if (!res.ok) throw new Error('Network response was not ok');
+    const data = await res.json();
+    if (data.type === 'single') {
+      return [data.joke];
+    } else if (data.type === 'twopart') {
+      return [data.setup, data.delivery];
+    } else {
+      return ['No joke found.'];
+    }
+  } catch (e) {
+    return ['Could not fetch joke. Try again later.'];
+  }
 }
 
 const createBanner = (text) => {
   return [
-    "     **     ****     **** **  ******** **      **     **    ",
-    "    ****   /**/**   **/**/** **////// /**     /**    ****   ",
-    "   **//**  /**//** ** /**/**/**       /**     /**   **//**  ",
-    "  **  //** /** //***  /**/**/*********/**********  **  //** ",
-    " **********/**  //*   /**/**////////**/**//////** **********",
-    "/**//////**/**   /    /**/**       /**/**     /**/**//////**",
-    "/**     /**/**        /**/** ******** /**     /**/**     /**",
-    "//      // //         // // ////////  //      // //      // "
+    "     **     ****     **** **  ********   **      **     **    ",
+    "    ****    ** **   ** ** **  **         **      **    ****   ",
+    "   **  **   ** ** **   ** **  **         **      **   **  **  ",
+    "  **    **  **   ***   ** **  *********  **********  **    ** ",
+    " ********** **    *    ** **          ** **      ** **********",
+    "**       ** **         ** **          ** **      ** **       **",
+    "**        ** **        ** **  *********  **      ** **       **",
+    "    "
   ]
 }
 
@@ -71,8 +90,12 @@ const commandRegistry = {
       "  sudo hire-amisha   - Download resume",
       "  banner amisha      - Show ASCII banner",
       "  fortune            - Get a random quote",
+      "  joke               - Get a random joke",
       "  open resume        - Open resume",
       "  sleep <seconds>    - Delay output",
+      "",
+      "Joke:",
+      "  joke               - Get a random joke",
       ""
     ]
   }),
@@ -135,9 +158,13 @@ const commandRegistry = {
     ]
   }),
 
-  fortune: () => ({
-    output: [getRandomQuote()]
+  fortune: async () => ({
+    output: [await getRandomQuote()]
   }),
+
+  joke: async () => {
+    return { output: await getRandomJoke() };
+  },
 
   neofetch: () => ({
     output: [
@@ -444,5 +471,5 @@ export const executeCommand = (input, currentPath) => {
 export const getAvailableCommands = () => [
   'help', 'ls', 'cd skills', 'cd projects', 'cd experience', 'cd education', 'cd publications', 'cd about', 'cd ..', 'pwd',
   'whoami', 'date', 'clear',
-  'sudo hire-amisha', 'banner amisha', 'fortune', 'neofetch', 'open resume', 'sleep 1', 'sleep 2', 'sleep 3'
+  'sudo hire-amisha', 'banner amisha', 'fortune', 'neofetch', 'open resume', 'sleep 1', 'sleep 2', 'sleep 3', 'joke'
 ]
