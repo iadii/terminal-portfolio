@@ -58,7 +58,7 @@ const Lanyard = () => {
   }
 
   return (
-    <div className="flex flex-col items-center w-full" style={{ marginTop: 0 }}>
+    <div className="flex flex-col items-center w-full px-2 sm:px-0" style={{ marginTop: 0 }}>
       <motion.div
         style={{ originY: 0, originX: 0.5, rotate: springAngle }}
         onClick={handleSwingClick}
