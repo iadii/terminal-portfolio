@@ -17,11 +17,15 @@ export const useTerminal = () => {
       const { output, newPath } = result
       setCommandHistory(prev => [...prev, input.trim()])
       setHistoryIndex(-1)
-      setHistory(prev => [
-        ...prev,
-        { type: 'input', content: input, path: currentPath },
-        { type: 'output', content: result }
-      ])
+      if (result.clear) {
+        setHistory([])
+      } else {
+        setHistory(prev => [
+          ...prev,
+          { type: 'input', content: input, path: currentPath },
+          { type: 'output', content: result }
+        ])
+      }
       if (newPath) {
         setCurrentPath(newPath)
       }
