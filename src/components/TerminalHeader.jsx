@@ -13,7 +13,7 @@ const TerminalHeader = ({ currentPath }) => {
         
       </div>
       <div className="terminal-title">
-        amisha@macbook: {currentPath}
+        root@amisha.io — ~zsh — 80×24
       </div>
       <div></div>
     </div>

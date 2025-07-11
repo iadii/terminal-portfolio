@@ -29,7 +29,7 @@ const Terminal = () => {
         <div className="terminal-input-area">
           <form onSubmit={handleSubmit} className="terminal-line">
             <span className="terminal-prompt">
-              amisha@macbook:{currentPath}$
+              root@amisha.io:{currentPath}$
             </span>
             <input
               ref={inputRef}
