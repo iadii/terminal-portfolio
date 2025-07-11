@@ -1,4 +1,4 @@
-# Ammy Portfolio
+# Terminal based Portfolio
 
 A modern, interactive portfolio web application for Amisha Sharma, a Full Stack Developer. This project showcases skills, experience, and social profiles in a visually appealing and responsive format.
 
