@@ -17,7 +17,7 @@ const IDCard = () => {
   const [hovered, setHovered] = useState(null)
 
   return (
-    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-[420px] sm:h-[480px] md:h-[520px] rounded-2xl overflow-hidden bg-[#181818] shadow-xl border border-[#222] mx-auto">
+    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md max-h-[90vh] overflow-auto rounded-2xl bg-[#181818] shadow-xl border border-[#222] mx-auto">
       <div className="relative w-full h-1/2">
         <img src={PROFILE_IMG} alt="Profile" className="object-contain w-full h-full bg-black" style={{ objectPosition: 'center' }} />
         <span className="absolute top-2 right-2 bg-[#222] text-xs text-gray-200 px-3 py-1 rounded-full shadow-md z-20">ID: DEV-2025</span>

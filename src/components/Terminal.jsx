@@ -16,10 +16,10 @@ const Terminal = () => {
   } = useTerminal()
 
   return (
-    <div className="terminal-container-long">
+    <div className="terminal-container-long flex flex-col flex-1 min-h-0">
       <TerminalHeader currentPath={currentPath} />
       
-      <div className="terminal-body">
+      <div className="terminal-body flex-1 min-h-0 overflow-auto">
         <TerminalOutput 
           history={history} 
           outputRef={outputRef} 
