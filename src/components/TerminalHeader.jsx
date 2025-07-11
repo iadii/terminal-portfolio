@@ -24,7 +24,7 @@ const MacMaximizeIcon = () => (
 const TerminalHeader = ({ currentPath }) => {
   const [hovered, setHovered] = useState(false)
   return (
-    <div className="terminal-header">
+    <div className="terminal-header flex flex-col sm:flex-row gap-2 sm:gap-0 sm:items-center sm:justify-between px-3 sm:px-5 py-2 sm:py-4">
       <div
         className="terminal-controls"
         onMouseEnter={() => setHovered(true)}
@@ -40,10 +40,10 @@ const TerminalHeader = ({ currentPath }) => {
           {hovered && <MacMaximizeIcon />}
         </div>
       </div>
-      <div className="terminal-title">
+      <div className="terminal-title text-xs sm:text-sm md:text-base text-center w-full sm:w-auto">
         root@amisha.io — ~zsh — 80×24
       </div>
-      <div></div>
+      <div className="hidden sm:block"></div>
     </div>
   )
 }

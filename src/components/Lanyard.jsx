@@ -58,13 +58,13 @@ const Lanyard = () => {
   }
 
   return (
-    <div className="flex flex-col items-center" style={{ marginTop: 0 }}>
+    <div className="flex flex-col items-center w-full" style={{ marginTop: 0 }}>
       <motion.div
         style={{ originY: 0, originX: 0.5, rotate: springAngle }}
         onClick={handleSwingClick}
-        className="flex flex-col items-center cursor-pointer"
+        className="flex flex-col items-center cursor-pointer w-full"
       >
-        <svg width={svgWidth} height={LANYARD_HEIGHT} style={{ marginTop: -180 }}>
+        <svg width={svgWidth} height={LANYARD_HEIGHT} style={{ marginTop: -180, maxWidth: '100%' }}>
           <path
             d={getStrapPath(centerStrapX, currentAngle)}
             stroke={LANYARD_COLOR}
@@ -73,7 +73,7 @@ const Lanyard = () => {
             strokeLinecap="round"
           />
         </svg>
-        <div className="-mt-2">
+        <div className="-mt-2 w-full flex justify-center">
           <IDCard onLinkClick={handleLinkClick} />
         </div>
       </motion.div>
