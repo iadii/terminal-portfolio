@@ -4,7 +4,7 @@ import Terminal from './components/Terminal'
 
 function App() {
   return (
-    <div className="min-h-screen bg-terminal-bg flex flex-col md:flex-row overflow-auto">
+    <div className="min-h-screen bg-terminal-bg flex flex-col md:flex-row md:overflow-auto">
       {/* Left Section - Lanyard (40%) */}
       <div className="w-full md:w-2/5 flex items-center justify-center p-4 md:p-8 sm:p-2">
         <Lanyard />
