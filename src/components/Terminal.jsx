@@ -37,7 +37,6 @@ const Terminal = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               className="terminal-input"
-              autoFocus
               spellCheck={false}
             />
             <span className="terminal-cursor"></span>
