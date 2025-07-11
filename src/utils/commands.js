@@ -94,8 +94,6 @@ const commandRegistry = {
       "  open resume        - Open resume",
       "  sleep <seconds>    - Delay output",
       "",
-      "Joke:",
-      "  joke               - Get a random joke",
       ""
     ]
   }),
