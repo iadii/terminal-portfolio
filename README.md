@@ -28,7 +28,7 @@ A modern, interactive portfolio web application for Amisha Sharma, a Full Stack 
 1. **Clone the repository:**
    ```bash
    git clone <repo-url>
-   cd ammy-portfolio
+   cd terminal-portfolio
    ```
 2. **Install dependencies:**
    ```bash
@@ -47,7 +47,7 @@ A modern, interactive portfolio web application for Amisha Sharma, a Full Stack 
 ## Project Structure
 
 ```
-ammy-portfolio/
+terminal-portfolio/
 ├── public/                # Static assets (images, resume)
 ├── src/
 │   ├── components/        # React components (IDCard, Terminal, etc.)
