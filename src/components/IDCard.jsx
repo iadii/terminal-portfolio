@@ -20,11 +20,12 @@ const IDCard = () => {
     <div className="relative w-[370px] h-[520px] rounded-2xl overflow-hidden bg-[#181818] shadow-xl border border-[#222]">
       <div className="relative w-full h-1/2">
         <img src={PROFILE_IMG} alt="Profile" className="object-contain w-full h-full bg-black" style={{ objectPosition: 'center' }} />
+        <span className="absolute top-2 right-2 bg-[#222] text-xs text-gray-200 px-3 py-1 rounded-full shadow-md z-20">ID: DEV-2025</span>
       </div>
       <div className="flex flex-col justify-between h-1/2 p-5 text-white">
         <div>
           <h2 className="text-2xl font-bold tracking-wide">Amisha Sharma</h2>
-          <p className="text-base text-gray-300 mb-2">Full Stack Developer</p>
+          <p className="text-base text-gray-300 mb-2">AI Developer</p>
           <div className="text-xs text-gray-400 mb-1">Location: Ghaziabad, UP</div>
           <div className="text-xs text-gray-400 mb-1">Email: amishasharma0912@gmail.com</div>
           <div className="text-xs text-gray-400 mb-3">Phone: +91 7814700512</div>
@@ -53,7 +54,6 @@ const IDCard = () => {
               </div>
             ))}
           </div>
-          <span className="text-xs text-gray-500">ID: DEV-2025</span>
         </div>
       </div>
     </div>
