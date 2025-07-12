@@ -55,7 +55,7 @@
   }
 }
 
-/* Custom scrollbar for terminal */
+
 .terminal-output::-webkit-scrollbar {
   width: 8px;
 }
