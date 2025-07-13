@@ -58,11 +58,11 @@ const Lanyard = () => {
   }
 
   return (
-    <div className="flex flex-col items-center w-full px-2 sm:px-0" style={{ marginTop: 0 }}>
+    <div className="flex flex-col items-center w-full px-2 sm:px-0 relative z-20" style={{ marginTop: 0 }}>
       <motion.div
         style={{ originY: 0, originX: 0.5, rotate: springAngle }}
         onClick={handleSwingClick}
-        className="flex flex-col items-center cursor-pointer w-full"
+        className="flex flex-col items-center cursor-pointer w-full relative z-20"
       >
         <svg width={svgWidth} height={LANYARD_HEIGHT} style={{ marginTop: -180, maxWidth: '100%' }}>
           <path

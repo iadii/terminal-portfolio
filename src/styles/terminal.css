@@ -12,6 +12,8 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   font-family: 'JetBrains Mono', monospace;
   margin: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .terminal-header {
@@ -73,6 +75,7 @@
   min-height: 0;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .terminal-output {
@@ -85,7 +88,7 @@
   scrollbar-width: thin;
   scrollbar-color: #333 #0A0A0A;
   min-height: 0;
-  max-height: none;
+  max-height: calc(100% - 120px);
 }
 
 .terminal-output::-webkit-scrollbar {
@@ -132,7 +135,8 @@
   min-height: 60px;
   position: sticky;
   bottom: 0;
-  z-index: 2;
+  z-index: 10;
+  flex-shrink: 0;
 }
 
 .terminal-input {
@@ -159,6 +163,29 @@
   51%, 100% { opacity: 0; }
 }
 
+/* Ensure scrolling works for all screen sizes */
+.terminal-container-long {
+  overflow: hidden;
+}
+
+.terminal-body {
+  overflow: hidden;
+}
+
+.terminal-output {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #0A0A0A;
+}
+
+.terminal-input-area {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background: #0A0A0A;
+  border-top: 1px solid #333;
+}
+
 
 .terminal-fullscreen {
   position: fixed;
@@ -179,6 +206,17 @@
     transform-origin: top center;
     margin-bottom: 15px;
   }
+  
+  .terminal-output {
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
+  }
+  
+  .terminal-input-area {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
 }
 
 /* Tablet scaling */
@@ -187,6 +225,17 @@
     transform: scale(0.85);
     transform-origin: top center;
     margin-bottom: 20px;
+  }
+  
+  .terminal-output {
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
+  }
+  
+  .terminal-input-area {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
   }
 }
 
@@ -208,10 +257,15 @@
     padding: 15px;
     min-height: 500px;
     overflow-x: auto;
+    overflow-y: auto;
     white-space: pre;
+    max-height: calc(100vh - 200px);
   }
   .terminal-input-area {
     padding: 15px;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
   }
 }
 
