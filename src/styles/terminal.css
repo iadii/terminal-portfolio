@@ -172,6 +172,24 @@
 }
 
 
+/* Tablet scaling */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .terminal-container-long {
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Small laptop scaling */
+@media (max-width: 1366px) and (min-width: 1025px) {
+  .terminal-container-long {
+    transform: scale(0.9);
+    transform-origin: top center;
+    margin-bottom: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   .terminal-container-long {
     height: auto;
@@ -180,6 +198,7 @@
     margin: 0;
     width: 96vw;
     max-width: 96vw;
+    transform: none;
   }
   .terminal-body {
     overflow-x: auto;
