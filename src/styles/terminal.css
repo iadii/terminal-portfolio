@@ -172,21 +172,21 @@
 }
 
 
+/* Small laptop scaling (1920x1080 and smaller) */
+@media (max-width: 1920px) and (min-width: 1025px) {
+  .terminal-container-long {
+    transform: scale(0.9);
+    transform-origin: top center;
+    margin-bottom: 15px;
+  }
+}
+
 /* Tablet scaling */
 @media (max-width: 1024px) and (min-width: 769px) {
   .terminal-container-long {
     transform: scale(0.85);
     transform-origin: top center;
     margin-bottom: 20px;
-  }
-}
-
-/* Small laptop scaling */
-@media (max-width: 1366px) and (min-width: 1025px) {
-  .terminal-container-long {
-    transform: scale(0.9);
-    transform-origin: top center;
-    margin-bottom: 15px;
   }
 }
 
